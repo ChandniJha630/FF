@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomePage</title>
+</head>
+<style>
+    body{
+        background-image: url('https://img.freepik.com/premium-vector/forest-fire-realistic-silhouette-landscape_88272-1925.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .btn{
+        border-radius: 16px;
+        width:50%;
+        height:3rem;
+        font-size: 28px;
+        margin:2rem;
+        margin-left:25%;
+        margin-right:25%;
+        opacity: 0.5;
+        border-style: none;
+    }
+    .btn:hover{
+        background-color: rgb(255, 140, 0);
+        color:white;
+        opacity:1;
+    }
+    .a{
+      display:block;
+      color:white;
+        font-family: sans-serif;
+        font-size: 16px;
+        height: 8rem;
+        width:30%;
+       padding-top:0.2rem;
+       padding-left: 35%;
+       padding-right: 35%;
+        margin-bottom:2rem;
+       background-color: rgba(255, 166, 0, 0.397);
+    }
+    h2{
+        font-family: 'sans-serif';
+        font-size:28px;
+        color:white;
+        width:30%;
+        margin-left: 35%;
+        margin-right:35%;
+        padding-top:1rem;
+    }
+    .i{
+        opacity: 0.5;
+        width:50%;
+        height:2rem;
+        margin:0.2rem;
+        margin-left: 25%;
+    }
+    .c{
+        background-color: rgba(0, 0, 0, 0.626);
+        height:8rem;
+        
+    }
+</style>
+<body>
+    <div class="a">
+        <h1> FWI Prediction Model</h1>
+    </div>
+    
+    <form action="{{url_for('predict_datapoint')}}" method="post">
+        <input type="text" name="Temprature" placeholder="Temprature" required="required" class="i"/><br>
+        <input type="text" name="RH" placeholder="RH" required="required"class="i"/><br>
+        <input type="text" name="Ws" placeholder="Ws" required="required" class="i"/><br>
+        <input type="text" name="Rain" placeholder="Rain" required="required" class="i"/><br>
+        <input type="text" name="FFMC" placeholder="FFMC" required="required" class="i"/><br>
+        <input type="text" name="DMC" placeholder="DMC" required="required" class="i"/><br>
+        <input type="text" name="ISI" placeholder="ISI" required="required" class="i"/><br>
+        <input type="text" name="Classes" placeholder="Classes" required="required" class="i"/><br>
+        <input type="text" name="Region" placeholder="Region" required="required" class="i"/><br>
+        <button type="submit" class="btn">Predict</button>
+    </form>
+    <div class="c">
+        <h2>
+            The FWI prediction is {{result}}
+        </h2>
+    </div>
+    
+</body>
+</html>
